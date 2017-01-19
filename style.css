@@ -1,18 +1,19 @@
 #background {
-  background: fixed center no-repeat;
+  background: fixed center;
   background-size: cover;
-  width: 100%;
-  padding-top: 100px;
+  height: 100%;
   text-align: center;
 }
-
 #square {
   background-color: grey;
    height: 150px;
   width: 150px;
    margin-left: auto;
     margin-right: auto;
-    padding: 30px;
+  margin-top: 10px;
+  border-radius: 10%;
+  padding: 30px;
+  padding-bottom: 50px;
 }
 
 input:focus,
@@ -20,4 +21,14 @@ select:focus,
 textarea:focus,
 button:focus {
     outline: none;
+}
+
+input {
+  padding: 5px;
+}
+
+button {
+ background: none;
+  border: solid 1px white;
+  border-radius: 1px;
 }
