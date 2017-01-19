@@ -1,0 +1,22 @@
+#background {
+  background: fixed center no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding-top: 100px;
+  text-align: center;
+}
+#square {
+  background-color: grey;
+   height: 150px;
+  width: 150px;
+   margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
