@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-   var R;
+  var R;
   var G;
   var B;
   var RGB;
