@@ -1,53 +1,79 @@
 $(document).ready(function() {
 
+  //colors for the box
   var R;
   var G;
   var B;
   var RGB;
   
+  var level = 1;
+  var difRange = [0, 50,40,30,20,10];
+  var maxDif = difRange[level];
+
+  //random color generator
   function randomColor() {
     var step = 5;
     var max = 256;
-var random = Math.random() * (max + step);
-var randomMultiple = random - (random % step);
+    var random = Math.random() * (max + step);
+    var randomMultiple = random - (random % step);
     return randomMultiple;
   }
-  
-    var x = randomColor();
-  var y = randomColor();
-  var z = randomColor();
-   var backgroundRGB = "rgb(" + x + "," + y + "," + z + ")";
-  
-  $("#background").css("background-color", backgroundRGB);
 
-  function closeEnough() {
-    var diff = Math.abs(x-R) + Math.abs(y-G) + Math.abs(z-B);
-    return diff<30;
+  //sets new game
+  function newGame() {
+    var x = randomColor();
+    var y = randomColor();
+    var z = randomColor();
+    var backgroundRGB = "rgb(" + x + "," + y + "," + z + ")";
+    $("#background").css("background-color", backgroundRGB);
+    $("span").html("Level: " + level);
   }
-     
-function change() {
+
+  //returns true if colors match closely enough based on level
+  function closeEnough() {
+    var diff = Math.abs(x - R) + Math.abs(y - G) + Math.abs(z - B);
+    return diff < maxDif;
+  }
+
+  //updates color of square 
+  function change() {
     R = $('#rangeR').val();
     G = $('#rangeG').val();
     B = $('#rangeB').val();
     RGB = "rgb(" + R + "," + G + "," + B + ")";
     $("#square").css("background-color", RGB);
-    $("#p").html(backgroundRGB + " " + RGB + " " + (Math.abs(x-R) + Math.abs(y-G) + Math.abs(z-B)));
-    // if (closeEnough()) {
-    //    $('#p').html("win");
-    // }
+    $("#p").html(backgroundRGB + " " + RGB + " " + (Math.abs(x - R) + Math.abs(y - G) + Math.abs(z - B)));
   }
-  
-    $("input").mousemove(function() { 
+
+  //updates color based on movement
+  $("input").mousemove(function() {
     change();
-      });
-  
- $('input').keydown(function(e) {
-    if (e.keyCode==40) {
-        $(this).next('input').focus();
+  });
+
+  //starting point 
+  $("#rangeR").focus();
+  newGame();
+
+  //allows arrow keys to toggle active range bar
+  $('input').keydown(function(e) {
+    if (e.keyCode == 40) {
+      $(this).next('input').focus();
+    } else if (e.keyCode == 38) {
+      $(this).prev('input').focus();
+    } else {
+      change();
     }
-});
+  });
   
-   $("div").keydown(function() { 
+  $('#submit').click(function() {
     change();
-      });
+   //  if (closeEnough()){
+   //    level++;
+   //  } else {
+   //    level = 3;
+   //  }
+   // maxDif = difRange[level];
+   // newGame();
+  });
+
 });
