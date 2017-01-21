@@ -11,7 +11,7 @@ $(document).ready(function() {
   var backgroundRGB;
   
   var level = 1;
-  var difRange = [0, 50,40,30,20,10];
+  var difRange = [0, 100,40,30,20,10];
   var maxDif = difRange[level];
 
   //random color generator
