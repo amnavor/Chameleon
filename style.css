@@ -1,4 +1,13 @@
-#background {
+@import url('https://fonts.googleapis.com/css?family=Delius Unicase');
+
+#screen{
+  background: #c1c1c1;
+  border-radius: 15%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+  #background {
   background: fixed center;
   background-size: cover;
   height: 100%;
@@ -16,6 +25,11 @@
   padding-bottom: 50px;
 }
 
+span {
+  color: white;
+  font-family: Delius Unicase;
+}
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -24,11 +38,51 @@ button:focus {
 }
 
 input {
-  padding: 5px;
+  margin: 10px;
 }
 
-button {
- background: none;
-  border: solid 1px white;
-  border-radius: 1px;
+input[type='range'] {
+    -webkit-appearance: none !important;
+    height:3px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background: grey;
+  height:15px;
+    width:15px;
+  border-radius: 50%;
+}
+
+#rangeR {
+  background: linear-gradient(to right, black, red);
+}
+
+#rangeG {
+  background: linear-gradient(to right, black, green);
+}
+
+#rangeB {
+  background: linear-gradient(to right, black, blue);
+}
+
+
+#rangeR::-webkit-slider-thumb {
+  background: red;
+}
+
+#rangeG::-webkit-slider-thumb {
+  background: green;
+}
+
+#rangeB::-webkit-slider-thumb {
+  background: blue;
+}
+
+button{
+  font-family: Delius Unicase;
+  background: none;
+  border: none;
+  font-size: 15px;
+    color: white;
 }
