@@ -5,6 +5,10 @@ $(document).ready(function() {
   var G;
   var B;
   var RGB;
+  var x;
+  var y;
+  var z;
+  var backgroundRGB;
   
   var level = 1;
   var difRange = [0, 50,40,30,20,10];
@@ -21,10 +25,10 @@ $(document).ready(function() {
 
   //sets new game
   function newGame() {
-    var x = randomColor();
-    var y = randomColor();
-    var z = randomColor();
-    var backgroundRGB = "rgb(" + x + "," + y + "," + z + ")";
+    x = randomColor();
+    y = randomColor();
+    z = randomColor();
+    backgroundRGB = "rgb(" + x + "," + y + "," + z + ")";
     $("#background").css("background-color", backgroundRGB);
     $("span").html("Level: " + level);
   }
@@ -32,7 +36,7 @@ $(document).ready(function() {
   //returns true if colors match closely enough based on level
   function closeEnough() {
     var diff = Math.abs(x - R) + Math.abs(y - G) + Math.abs(z - B);
-    return diff < maxDif;
+    return (diff < maxDif);
   }
 
   //updates color of square 
@@ -66,14 +70,15 @@ $(document).ready(function() {
   });
   
   $('#submit').click(function() {
-    change();
-   //  if (closeEnough()){
-   //    level++;
-   //  } else {
-   //    level = 3;
-   //  }
-   // maxDif = difRange[level];
-   // newGame();
+    if (closeEnough()){
+      $('span').html("You got it!");
+      level++;
+    } else {
+      $('span').html("Try again!");
+      level = 1;
+    }
+   maxDif = difRange[level];
+   setTimeout(newGame, 1500);
   });
 
 });
