@@ -9,6 +9,10 @@ $(document).ready(function() {
   var y;
   var z;
   var backgroundRGB;
+  var diff;
+  var rangeR = document.getElementById("rangeR");
+    var rangeG = document.getElementById("rangeG");
+    var rangeB = document.getElementById("rangeB");
   
   var level = 1;
   var difRange = [0, 100,40,30,20,10];
@@ -35,7 +39,7 @@ $(document).ready(function() {
 
   //returns true if colors match closely enough based on level
   function closeEnough() {
-    var diff = Math.abs(x - R) + Math.abs(y - G) + Math.abs(z - B);
+    diff = Math.abs(x - R) + Math.abs(y - G) + Math.abs(z - B);
     return (diff < maxDif);
   }
 
@@ -75,6 +79,10 @@ $(document).ready(function() {
       level++;
     } else {
       $('span').html("Try again!");
+   rangeR.value = x;
+       rangeG.value = y;
+       rangeB.value = z;
+      change();
       level = 1;
     }
    maxDif = difRange[level];
