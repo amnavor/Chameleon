@@ -17,7 +17,7 @@ $(document).ready(function() {
   
   //levels and level range
   var level = 1;
-  var difRange = [0, 100,40,30,20,10];
+  var difRange = [0, 70,50,35,20,10];
   var maxDif = difRange[level];
 
   //random color generator
