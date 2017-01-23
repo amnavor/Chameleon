@@ -10,10 +10,12 @@ $(document).ready(function() {
   var z;
   var backgroundRGB;
   var diff;
+  // input range bars
   var rangeR = document.getElementById("rangeR");
     var rangeG = document.getElementById("rangeG");
     var rangeB = document.getElementById("rangeB");
   
+  //levels and level range
   var level = 1;
   var difRange = [0, 100,40,30,20,10];
   var maxDif = difRange[level];
@@ -73,6 +75,7 @@ $(document).ready(function() {
     }
   });
   
+  //checks if match is close enough and returns win or loss message
   $('#submit').click(function() {
     if (closeEnough()){
       if (level == 5) {
