@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Delius Unicase');
 
 #screen{
-  background: #c1c1c1;
   border-radius: 15%;
-  padding-top: 15px;
+  padding-top: 20px;
   padding-bottom: 15px;
 }
 
@@ -14,12 +13,12 @@
   text-align: center;
 }
 #square {
-  background-color: grey;
+  background: grey;
    height: 150px;
   width: 150px;
    margin-left: auto;
     margin-right: auto;
-  margin-top: 10px;
+  margin-top: 50px;
   border-radius: 10%;
   padding: 30px;
   padding-bottom: 50px;
@@ -28,6 +27,7 @@
 span {
   color: white;
   font-family: Delius Unicase;
+  font-size: 15px;
 }
 
 input:focus,
@@ -48,7 +48,7 @@ input[type='range'] {
 
 input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none !important;
-    background: grey;
+    background: white;
   height:15px;
     width:15px;
   border-radius: 50%;
@@ -56,6 +56,7 @@ input[type='range']::-webkit-slider-thumb {
 
 #rangeR {
   background: linear-gradient(to right, black, red);
+  margin-top: 20px;
 }
 
 #rangeG {
@@ -69,14 +70,17 @@ input[type='range']::-webkit-slider-thumb {
 
 #rangeR::-webkit-slider-thumb {
   background: red;
+  border: solid white;
 }
 
 #rangeG::-webkit-slider-thumb {
   background: green;
+    border: solid white;
 }
 
 #rangeB::-webkit-slider-thumb {
   background: blue;
+    border: solid white;
 }
 
 button{
@@ -85,4 +89,5 @@ button{
   border: none;
   font-size: 15px;
     color: white;
+  margin: 10px;
 }
