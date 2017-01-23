@@ -75,8 +75,13 @@ $(document).ready(function() {
   
   $('#submit').click(function() {
     if (closeEnough()){
+      if (level == 5) {
+         $('span').html("You win! Play again?");
+        level = 1; 
+      } else {
       $('span').html("You got it!");
       level++;
+      }
     } else {
       $('span').html("Try again!");
    rangeR.value = x;
